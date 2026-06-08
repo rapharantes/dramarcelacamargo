@@ -959,6 +959,48 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 
 /* ══════════════════════════════════════════════
+   INSTAGRAM FEED
+══════════════════════════════════════════════ */
+.instagram-feed {
+  padding: 100px 0 80px;
+  background: var(--white);
+}
+.instagram-feed .section-header {
+  margin-bottom: 48px;
+}
+.instagram-feed .section-eyebrow {
+  gap: 8px;
+}
+.instagram-feed .section-eyebrow i {
+  font-size: 1rem;
+  color: #e1306c;
+}
+.instagram-feed__widget {
+  width: 100%;
+  min-height: 200px;
+}
+.instagram-feed__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.instagram-feed__cta .btn--outline {
+  border-color: #e1306c;
+  color: #e1306c;
+  gap: 8px;
+}
+.instagram-feed__cta .btn--outline:hover {
+  background: #e1306c;
+  color: var(--white);
+  border-color: #e1306c;
+}
+
+@media (max-width: 768px) {
+  .instagram-feed { padding: 64px 0 48px; }
+}
+
+
+/* ══════════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════════ */
 .footer {
