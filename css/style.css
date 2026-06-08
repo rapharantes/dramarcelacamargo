@@ -375,15 +375,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   margin-bottom: 4px;
   white-space: nowrap;
 }
-.hero__title em {
+.hero__title-img {
   display: block;
-  font-style: italic;
-  font-size: clamp(3rem, 6vw, 5.2rem);
-  line-height: 1.08;
-  background: linear-gradient(135deg, #ffffff 0%, #e9d5ff 35%, #c084fc 70%, #a855f7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  max-width: 100%;
+  width: auto;
+  max-height: 480px; /* Aumentado */
+  margin-top: 12px;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+  animation: float 6s ease-in-out infinite; /* Adicionado animação suave */
 }
 
 .hero__subtitle {
@@ -402,28 +402,40 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 .hero__stats {
-  display: flex;
-  gap: 28px;
+  display: inline-flex;
+  gap: 32px;
   align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 24px 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  margin-bottom: 40px;
 }
 .hero__stat {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 .hero__stat strong {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800;
   color: var(--white);
   line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  white-space: nowrap;
 }
 .hero__stat span {
-  font-size: .78rem;
-  color: rgba(255,255,255,.58);
+  font-size: .85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.8);
+  text-transform: uppercase;
+  letter-spacing: .05em;
 }
 .hero__stat-divider {
-  width: 1px; height: 36px;
-  background: rgba(255,255,255,.18);
+  width: 1px; height: 48px;
+  background: rgba(255,255,255,.25);
   flex-shrink: 0;
 }
 
