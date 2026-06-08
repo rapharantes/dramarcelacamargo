@@ -132,6 +132,40 @@ lightbox.addEventListener('touchend', e => {
   if (Math.abs(diff) > 40) diff > 0 ? showImage(currentIdx + 1) : showImage(currentIdx - 1);
 });
 
+/* ── Counter animation ── */
+function animateCounter(el) {
+  const target   = parseFloat(el.dataset.count);
+  const prefix   = el.dataset.prefix  || '';
+  const suffix   = el.dataset.suffix  || '';
+  const decimals = parseInt(el.dataset.decimals || 0, 10);
+  const duration = 1800;
+  const steps    = 60;
+  const increment = target / steps;
+  let current = 0;
+  let step = 0;
+
+  const timer = setInterval(() => {
+    step++;
+    current = increment * step;
+    if (step >= steps) {
+      current = target;
+      clearInterval(timer);
+    }
+    el.textContent = prefix + current.toFixed(decimals) + suffix;
+  }, duration / steps);
+}
+
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.querySelectorAll('[data-count]').forEach(animateCounter);
+    counterObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.6 });
+
+const statsEl = document.querySelector('.hero__stats');
+if (statsEl) counterObserver.observe(statsEl);
+
 /* ── Scroll: hide hero scroll indicator ── */
 const scrollIndicator = document.querySelector('.hero__scroll-indicator');
 if (scrollIndicator) {

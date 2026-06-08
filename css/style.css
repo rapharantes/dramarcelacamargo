@@ -427,6 +427,17 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   flex-shrink: 0;
 }
 
+.stat--gold strong {
+  background: linear-gradient(135deg, #ffe066 0%, #f5c842 50%, #c9a227 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(245,200,66,.5));
+}
+.stat--gold span {
+  color: rgba(245,200,66,.75) !important;
+}
+
 /* Hero image */
 .hero__image-wrap {
   position: relative;
