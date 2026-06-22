@@ -166,6 +166,20 @@ const counterObserver = new IntersectionObserver(entries => {
 const statsEl = document.querySelector('.hero__stats');
 if (statsEl) counterObserver.observe(statsEl);
 
+/* ── Harmonização Facial: tabs ── */
+document.querySelectorAll('.harmonizacao__tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+
+    document.querySelectorAll('.harmonizacao__tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.harmonizacao__panel').forEach(p => p.classList.remove('active'));
+
+    tab.classList.add('active');
+    const panel = document.getElementById('tab-' + target);
+    if (panel) panel.classList.add('active');
+  });
+});
+
 /* ── Scroll: hide hero scroll indicator ── */
 const scrollIndicator = document.querySelector('.hero__scroll-indicator');
 if (scrollIndicator) {
