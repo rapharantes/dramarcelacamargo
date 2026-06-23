@@ -1156,61 +1156,22 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   background: var(--white);
 }
 
-.harmonizacao__tabs {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  margin: 0 auto 48px;
-  background: var(--gray-100);
-  padding: 6px;
-  border-radius: var(--radius-full);
-  max-width: 480px;
-}
-
-.harmonizacao__tab {
-  flex: 1;
-  padding: 12px 16px;
-  border-radius: var(--radius-full);
-  font-size: .875rem;
-  font-weight: 600;
-  color: var(--gray-500);
-  transition: var(--transition);
-  cursor: pointer;
-  line-height: 1.2;
-}
-.harmonizacao__tab .tab-label {
-  display: block;
-  font-size: .6rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  opacity: .7;
-}
-.harmonizacao__tab.active {
-  background: var(--white);
-  color: var(--purple-700);
-  box-shadow: var(--shadow-sm);
-}
-
-.harmonizacao__panels { min-height: 440px; }
-
-.harmonizacao__panel { display: none; animation: fadeInPanel .3s ease; }
-.harmonizacao__panel.active { display: flex; justify-content: center; }
-
-@keyframes fadeInPanel {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+.harmonizacao__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .plano-card {
   background: var(--white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  padding: 48px 52px;
-  max-width: 700px;
+  padding: 40px 24px;
   width: 100%;
   text-align: center;
   border-top: 5px solid;
+  display: flex;
+  flex-direction: column;
 }
 
 .plano-prata   { border-color: #a8a8a8; }
@@ -1237,11 +1198,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .plano-diamond .plano-name { color: #b07045; }
 
 .plano-price {
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--purple-700);
   margin-bottom: 10px;
   font-family: var(--font-body);
+  text-transform: uppercase;
 }
 .plano-desc {
   display: inline-block;
@@ -1255,10 +1217,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .plano-card__body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   text-align: left;
   margin-bottom: 40px;
+  flex-grow: 1;
 }
 
 .plano-section h4 {
@@ -1287,7 +1250,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-weight: 700;
 }
 
-.plano-cta { width: 100%; justify-content: center; }
+.plano-cta { width: 100%; justify-content: center; margin-top: auto; }
 
 .harmonizacao__obs {
   max-width: 700px;
@@ -1439,6 +1402,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ── Tablet (≤ 1024px) ── */
 @media (max-width: 1024px) {
   .treatments__grid    { grid-template-columns: repeat(2, 1fr); }
+  .harmonizacao__grid  { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
   .gallery__grid       { grid-template-columns: repeat(3, 1fr); }
   .about__content-side { padding: 60px 48px; }
   .footer__grid        { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -1531,8 +1495,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
   /* ── Harmonização ── */
   .harmonizacao { padding: 72px 0; }
-  .harmonizacao__tabs { max-width: 100%; border-radius: var(--radius-lg); }
-  .harmonizacao__tab { padding: 10px 12px; font-size: .8rem; }
+  .harmonizacao__grid { max-width: 100%; gap: 32px; }
   .plano-card { padding: 32px 20px; }
   .plano-card__body { grid-template-columns: 1fr; gap: 20px; }
   .harmonizacao__obs { padding: 20px; }
