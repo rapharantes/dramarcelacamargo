@@ -1274,7 +1274,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 
 /* ══════════════════════════════════════════════
-   GHK-Cu PEPTÍDEO
+   PEPTÍDEOS DE COBRE
 ══════════════════════════════════════════════ */
 .peptideo {
   padding: 100px 0;
@@ -1324,7 +1324,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 
 /* ══════════════════════════════════════════════
-   CLUBE DO BOTOX
+   CLUBE DA PREVENÇÃO
 ══════════════════════════════════════════════ */
 .clube-botox {
   padding: 100px 0;
@@ -1506,7 +1506,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   .peptideo__content { order: 1; }
   .peptideo__image   { order: 2; }
 
-  /* ── Clube do Botox ── */
+  /* ── Clube da Prevenção ── */
   .clube-botox { padding: 72px 0; }
 
   /* ── Galeria ── */
